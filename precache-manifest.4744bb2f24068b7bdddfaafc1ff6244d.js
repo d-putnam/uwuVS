@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1e2ddf80ad36ff4b2124e50c257c5261",
+    "revision": "ae85a8c4365cd86cb38222407081c5a1",
     "url": "/uwuVS/index.html"
   },
   {
-    "revision": "c44fc774e2c7f8e971ed",
+    "revision": "b62bbf1cb9d25a73c827",
     "url": "/uwuVS/static/css/main.cadd5a6c.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/uwuVS/static/js/2.7ba2fd14.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "c44fc774e2c7f8e971ed",
-    "url": "/uwuVS/static/js/main.29abca00.chunk.js"
+    "revision": "b62bbf1cb9d25a73c827",
+    "url": "/uwuVS/static/js/main.2debb7f2.chunk.js"
   },
   {
     "revision": "f3c62319fcf1d0dd916c",
