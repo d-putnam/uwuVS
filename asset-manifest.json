@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/uwuVS/static/css/main.cadd5a6c.chunk.css",
+    "main.js": "/uwuVS/static/js/main.c88bbe1f.chunk.js",
+    "main.js.map": "/uwuVS/static/js/main.c88bbe1f.chunk.js.map",
+    "runtime-main.js": "/uwuVS/static/js/runtime-main.6bc6d4ef.js",
+    "runtime-main.js.map": "/uwuVS/static/js/runtime-main.6bc6d4ef.js.map",
+    "static/js/2.7ba2fd14.chunk.js": "/uwuVS/static/js/2.7ba2fd14.chunk.js",
+    "static/js/2.7ba2fd14.chunk.js.map": "/uwuVS/static/js/2.7ba2fd14.chunk.js.map",
+    "index.html": "/uwuVS/index.html",
+    "precache-manifest.dce6a9f703ef1812d087c85007cb5228.js": "/uwuVS/precache-manifest.dce6a9f703ef1812d087c85007cb5228.js",
+    "service-worker.js": "/uwuVS/service-worker.js",
+    "static/css/main.cadd5a6c.chunk.css.map": "/uwuVS/static/css/main.cadd5a6c.chunk.css.map",
+    "static/js/2.7ba2fd14.chunk.js.LICENSE.txt": "/uwuVS/static/js/2.7ba2fd14.chunk.js.LICENSE.txt",
+    "static/media/fx.56eb48ac.svg": "/uwuVS/static/media/fx.56eb48ac.svg",
+    "static/media/info.a6a8ebcd.svg": "/uwuVS/static/media/info.a6a8ebcd.svg",
+    "static/media/presets.7f8f9cd3.svg": "/uwuVS/static/media/presets.7f8f9cd3.svg",
+    "static/media/shaders.95245505.svg": "/uwuVS/static/media/shaders.95245505.svg",
+    "static/media/sine.8dc8abec.svg": "/uwuVS/static/media/sine.8dc8abec.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6bc6d4ef.js",
+    "static/js/2.7ba2fd14.chunk.js",
+    "static/css/main.cadd5a6c.chunk.css",
+    "static/js/main.c88bbe1f.chunk.js"
+  ]
+}
