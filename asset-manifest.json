@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/uwuVS/static/css/main.cadd5a6c.chunk.css",
+    "main.css": "/uwuVS/static/css/main.f43f7aa2.chunk.css",
     "main.js": "/uwuVS/static/js/main.2debb7f2.chunk.js",
     "main.js.map": "/uwuVS/static/js/main.2debb7f2.chunk.js.map",
     "runtime-main.js": "/uwuVS/static/js/runtime-main.6bc6d4ef.js",
@@ -8,9 +8,9 @@
     "static/js/2.7ba2fd14.chunk.js": "/uwuVS/static/js/2.7ba2fd14.chunk.js",
     "static/js/2.7ba2fd14.chunk.js.map": "/uwuVS/static/js/2.7ba2fd14.chunk.js.map",
     "index.html": "/uwuVS/index.html",
-    "precache-manifest.4744bb2f24068b7bdddfaafc1ff6244d.js": "/uwuVS/precache-manifest.4744bb2f24068b7bdddfaafc1ff6244d.js",
+    "precache-manifest.8ddb5ded4d7f885f8830f599262edd00.js": "/uwuVS/precache-manifest.8ddb5ded4d7f885f8830f599262edd00.js",
     "service-worker.js": "/uwuVS/service-worker.js",
-    "static/css/main.cadd5a6c.chunk.css.map": "/uwuVS/static/css/main.cadd5a6c.chunk.css.map",
+    "static/css/main.f43f7aa2.chunk.css.map": "/uwuVS/static/css/main.f43f7aa2.chunk.css.map",
     "static/js/2.7ba2fd14.chunk.js.LICENSE.txt": "/uwuVS/static/js/2.7ba2fd14.chunk.js.LICENSE.txt",
     "static/media/fx.56eb48ac.svg": "/uwuVS/static/media/fx.56eb48ac.svg",
     "static/media/info.a6a8ebcd.svg": "/uwuVS/static/media/info.a6a8ebcd.svg",
@@ -21,7 +21,7 @@
   "entrypoints": [
     "static/js/runtime-main.6bc6d4ef.js",
     "static/js/2.7ba2fd14.chunk.js",
-    "static/css/main.cadd5a6c.chunk.css",
+    "static/css/main.f43f7aa2.chunk.css",
     "static/js/main.2debb7f2.chunk.js"
   ]
 }
