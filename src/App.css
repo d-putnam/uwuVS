@@ -1,38 +1,116 @@
-.App {
-  text-align: center;
+html, body {
+  overscroll-behavior: none;
+  margin:0;
+}
+body {
+  margin: 0;
+  font-family: 'Inconsolata', monospace;
+  font-weight: bolder;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.App-logo {
-  height: 40vmin;
+.canvas {
+  position: fixed; 
+  top: 0px; 
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  max-width:100%;
+  z-index: -1;
+}
+
+/* full app container */
+.flex-container {
+  display: flex;
+  margin-top: 2rem;
+}
+.container {
+  margin-top: 2rem;
+}
+
+.controls {
+  margin-right: 2rem;
+  /*width: 33vw;*/
+}
+.controls.hidden {
+  max-width: 0px;
+  margin-right: 0px;
+  transition: 
+    max-width 0.2s 0.4s linear,
+    margin-right 0.2s 0.4s linear;
+}
+.controls.showing {
+  max-width: 300px;
+  transition: 
+    max-width 0.2s linear,
+    margin-right 0.2s linear;
+}
+
+.center {
+  text-align: center;
+  width: 100%;
+}
+.label {
+  font-family: 'Recursive', sans-serif;
+  margin-bottom: -.5rem;
+  font-weight: 800;
+  font-size: 1.05rem;
+}
+
+.button {
+  margin-left: .25rem;
+  margin-right: .25rem;
+	box-shadow:inset 0px 0px 10px 3px rgba(137, 137, 137, 0.25);
+	background:linear-gradient(to bottom, rgba(189, 190, 190, 0.3) 5%, rgba(88, 90, 92, 0.25) 100%);
+	background-color:rgba(139, 139, 124, 0.25);
+	border-radius:5px;
+	border:1px solid rgba(32, 32, 32, 0.3);
+	display:inline-block;
+	cursor:pointer;
+  color: rgba(255, 255, 255, 0.66);
+  font-family: 'Inconsolata', monospace;
+  font-size:0.9rem;
+  font-weight: bold;
+	padding:0.3rem 0.3rem 0.35rem 0.3rem;
+	text-decoration:none;
+  text-shadow:0px 1px 0px rgba(38, 54, 102, 0.25);
+    /* disable text selection */
+    -webkit-touch-callout:none;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+.button:hover {
+	background:linear-gradient(to bottom, rgba(209, 210, 210, 0.3) 5%, rgba(108, 110, 112, 0.25) 100%);
+	background-color:rgba(158, 158, 144, 0.3);
+}
+.button.active {
+	box-shadow:inset 0px 0px 10px 3px rgba(63, 63, 63, 0.25);
+	background:linear-gradient(to bottom, rgba(88, 90, 92, 0.25) 5%, rgba(209, 210, 211, 0.25) 100%);
+  background-color:rgba(93, 93, 86, 0.25);
+  color: rgba(150, 150, 150, 0.66);
   pointer-events: none;
 }
+.button.empty {
+  background: transparent;
+  border:1px solid rgba(12, 12, 12, 0.3);
+  pointer-events: none;
+  box-shadow: none;
+  text-shadow: none;
+}
+.button:focus {
+  outline: none !important;
+}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+
+/* phones in regular orientation */
+@media only screen and (max-width: 415px) {
+  .info {
+    margin-left: 2rem;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+  .container {
+    margin-top: 0rem;
   }
 }
