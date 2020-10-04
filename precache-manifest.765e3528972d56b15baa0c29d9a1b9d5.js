@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c65e5cb2f4d60ce4d9d982d99ee6d154",
+    "revision": "0e278f0ffcfbf25d44ded336112b9050",
     "url": "/uwuVS/index.html"
   },
   {
-    "revision": "aed11517a3d0016e6753",
+    "revision": "60e69d3510edfa244c4f",
     "url": "/uwuVS/static/css/main.6e84cfb4.chunk.css"
   },
   {
-    "revision": "4a3210e206bac538a499",
-    "url": "/uwuVS/static/js/2.e8bda1a0.chunk.js"
+    "revision": "3195c03347e65aa26143",
+    "url": "/uwuVS/static/js/2.8f9f666a.chunk.js"
   },
   {
-    "revision": "0aadc8a8405aeed76ae7e020b1d921e7",
-    "url": "/uwuVS/static/js/2.e8bda1a0.chunk.js.LICENSE.txt"
+    "revision": "e88a3e95b5364d46e95b35ae8c0dc27d",
+    "url": "/uwuVS/static/js/2.8f9f666a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "aed11517a3d0016e6753",
-    "url": "/uwuVS/static/js/main.8eb3fb43.chunk.js"
+    "revision": "60e69d3510edfa244c4f",
+    "url": "/uwuVS/static/js/main.67f243e7.chunk.js"
   },
   {
     "revision": "f3c62319fcf1d0dd916c",
