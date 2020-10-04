@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import * as THREE from 'three';
-import {isMobile} from 'react-device-detect';
+//import {isMobile} from 'react-device-detect';
 import { fragShader1 } from './shaders/fragShader01.js'
 import { fragShader2 } from './shaders/fragShader02.js'
 import { fragShader3 } from './shaders/fragShader03.js'
@@ -10,6 +10,11 @@ import { fbxShader } from './shaders/fbxShader.js'
 
 class Three extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {width: window.innerWidth, height: window.outerHeight}
+  }
+
   componentDidMount() {
     this.sceneSetup();
     this.drawSceneSetup();
@@ -17,10 +22,12 @@ class Three extends Component {
     this.fbxSceneSetup();
     this.startAnimationLoop();
     window.addEventListener('resize', this.handleWindowResize);
+    //window.addEventListener("orientationchange", this.handlwWindowResize);
   }
 
   componentWillUnmount() {
     window.removeEventListener('resize', this.handleWindowResize);
+    //window.removeEventListener("orientationchange", this.handlwWindowResize);
     window.cancelAnimationFrame(this.requestID);
     this.controls.dispose();
   }
@@ -32,20 +39,13 @@ class Three extends Component {
 
 
   sceneSetup = () => {
-    
-    isMobile === true
-      ? [this.width, this.height] = [window.screen.width, window.screen.height]
-      : [this.width, this.height] = [window.innerWidth, window.innerHeight]
-  
-    //this.width = window.innerWidth 
-    //this.height = window.innerHeight 
 
     this.scene = new THREE.Scene();
     this.camera = new THREE.OrthographicCamera( 
-      this.width / - 2, 
-      this.width / 2, 
-      this.height / 2, 
-      this.height / - 2, 
+      this.state.width / - 2, 
+      this.state.width / 2, 
+      this.state.height / 2, 
+      this.state.height / - 2, 
       1, 1000 );
     this.camera.position.z = 2;
 
@@ -53,17 +53,17 @@ class Three extends Component {
     this.now = this.clock.getElapsedTime();
 
     // plane geometry will be shared across scenes
-    this.geometry = new THREE.PlaneBufferGeometry(this.width, this.height);
+    this.geometry = new THREE.PlaneBufferGeometry(this.state.width, this.state.height);
 
     this.renderer = new THREE.WebGLRenderer({ antialias: true });
     this.renderer.setPixelRatio(window.devicePixelRatio);
-    this.renderer.setSize(this.width, this.height);
+    this.renderer.setSize(this.state.width, this.state.height);
     this.mount.appendChild(this.renderer.domElement); // mount using React ref
   }
 
   drawSceneSetup = () => {
     this.drawScene = new THREE.Scene();
-    this.drawTexture = new THREE.WebGLRenderTarget(this.width, this.height, 
+    this.drawTexture = new THREE.WebGLRenderTarget(this.state.width, this.state.height, 
       {minFilter: THREE.LinearFilter, magFilter: THREE.LinearFilter}
     );
     
@@ -77,7 +77,7 @@ class Three extends Component {
 
     this.drawMaterial = new THREE.ShaderMaterial({
       uniforms: {
-        u_resolution: {value: {x: this.width, y: this.height}},
+        u_resolution: {value: {x: this.state.width, y: this.state.height}},
         u_time: {value: this.now},
         u_0: {value: this.props.uniforms[0]},
         u_1: {value: this.props.uniforms[1]},
@@ -97,14 +97,14 @@ class Three extends Component {
 
   brcosaSceneSetup = () => {
     this.brcosaScene = new THREE.Scene();
-    this.brcosaTexture = new THREE.WebGLRenderTarget(this.width, this.height, 
+    this.brcosaTexture = new THREE.WebGLRenderTarget(this.state.width, this.state.height, 
       {minFilter: THREE.LinearFilter, magFilter: THREE.LinearFilter}
     );
 
     this.brcosaMaterial = new THREE.ShaderMaterial({
       uniforms: {
         drawTexture: {type: "t", value: this.drawTexture.texture},
-        u_resolution: {value: {x: this.width, y: this.height}},
+        u_resolution: {value: {x: this.state.width, y: this.state.height}},
         u_time: {value: this.now},
         u_9: {value: this.props.uniforms[9]},
         u_10: {value: this.props.uniforms[10]},
@@ -119,17 +119,17 @@ class Three extends Component {
   fbxSceneSetup = () => {
     this.fbxScene = new THREE.Scene();
     // Create 2 buffer textures
-    this.textureA = new THREE.WebGLRenderTarget(this.width, this.height, 
+    this.textureA = new THREE.WebGLRenderTarget(this.state.width, this.state.height, 
       {minFilter: THREE.LinearFilter, magFilter: THREE.LinearFilter}
     );
-    this.textureB = new THREE.WebGLRenderTarget(this.width, this.height, 
+    this.textureB = new THREE.WebGLRenderTarget(this.state.width, this.state.height, 
       {minFilter: THREE.LinearFilter, magFilter: THREE.LinearFilter}
     );
     // Pass textureA to shader
     this.fbxMaterial = new THREE.ShaderMaterial({
       uniforms: {
        bufferTexture: {type: "t", value: this.textureA.texture},
-       u_resolution: {value: {x: this.width, y: this.height}},
+       u_resolution: {value: {x: this.state.width, y: this.state.height}},
        drawTexture: {type: "t", value: this.brcosaTexture.texture},
        u_time: {value: this.now},
        u_12: {value: this.props.uniforms[12]}, 
@@ -182,13 +182,9 @@ class Three extends Component {
   };
 
   handleWindowResize = () => {
-    isMobile === true
-      ? [this.width, this.height] = [window.screen.width, window.screen.height]
-      : [this.width, this.height] = [window.innerWidth, window.innerHeight]
-
-    this.renderer.setSize(this.width, this.height);
-    this.camera.aspect = this.width / this.height;
-
+    this.setState({width: window.innerWidth, height: window.outerHeight})
+    this.renderer.setSize(window.innerWidth, window.innerHeight);
+    this.camera.aspect = this.state.width / this.state.height;
     this.camera.updateProjectionMatrix();
   };
 

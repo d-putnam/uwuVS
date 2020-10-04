@@ -137,10 +137,9 @@ tr td:last-child {
 
 @media only screen and (max-width: 415px) {
   .info-module {
-    position: absolute;
+    position: fixed;
     bottom: 3rem;
     min-width: 0rem;
-
   }
   .button-wrap {
     display: flex;
@@ -190,6 +189,46 @@ tr td:last-child {
   }
   .text-container {
     padding: 0.7rem;
+    height: calc(60vh - 1.5rem);
+  }
+}
+
+/*phones, side orientation*/
+@media only screen and (orientation:landscape) and (max-width: 812px) and (max-height: 414px) {
+  .info {
+    display:flex;
+  }
+  .info-module { 
+    overflow:hidden;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    margin-left: 4rem;
+    margin-top: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+  }
+  #presets.showing {
+    max-height: calc(100vh - 4rem);
+    height: fit-content;
+    width: calc(100vw - 6rem);
+    margin-left: 4rem;
+    margin-top: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+  }
+  #about.showing {
+    position:fixed;
+    max-height: calc(100vh - 7rem);
+    height: calc(100vh - 7rem);
+    max-width: calc(100vw - 10rem);
+    width: calc(100vw - 10rem);
+    margin-left: 4rem;
+    margin-top: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+  }
+  .text-container {
+    height: calc(100vh - 9rem);
   }
 }
 

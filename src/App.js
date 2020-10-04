@@ -20,43 +20,49 @@ class App extends Component {
           sliders: JSON.parse(localStorage.getItem('ursprst'))[0]['sliders'],
           activeShader: JSON.parse(localStorage.getItem('ursprst'))[0]['activeShader'],
           activePreset: 0,
-          windowState: window.screen.width < 415
-                        ? [1, 0, 0, 0, 0]
-                        : [1, 1, 1, 0, 0],
+          windowState:   window.screen.width < 813
+                          ? window.screen.height < 415
+                            ? [1, 0, 0, 0, 0]
+                            : window.screen.width < 415
+                              ? [1, 0, 0, 0, 0]
+                              : [1, 1, 1, 0, 0]
+                          : [1, 1, 1, 0, 0],
           hideAllState: false,
           uniforms: JSON.parse(localStorage.getItem('ursprst'))[0]['uniforms'],
           presets: JSON.parse(localStorage.getItem('ursprst'))
         }
       // Load defaults if no local storage data
       : this.state = {
-          sliders: defaultData,
+          sliders: JSON.parse(JSON.stringify(defaultData)),
           activeShader: '0',
           activePreset: 0,
-          windowState: window.screen.width < 415
-                        ? [1, 0, 0, 0, 0]
-                        : [1, 1, 1, 0, 0],          
+          windowState: window.screen.width < 813
+                        ? window.screen.height < 415
+                          ? [1, 0, 0, 0, 0]
+                          : window.screen.width < 415
+                            ? [1, 0, 0, 0, 0]
+                            : [1, 1, 1, 0, 0]
+                        : [1, 1, 1, 0, 0],         
           hideAllState: false,
           uniforms: defaultData[0].map(slider => 
             scale(slider[3], [slider[1], slider[2]], [0, 127])),
           presets: [{activeShader: '0',
-            sliders: defaultData, 
+            sliders: JSON.parse(JSON.stringify(defaultData)), 
             uniforms: defaultData[0].map(slider => 
             scale(slider[3], [slider[1], slider[2]], [0, 127]))}]
       }
   }
 
+
   //
   // set up listeners on mount
   //
   componentDidMount() {
-    window.scrollTo(0, 1);
     // Keydown listener for keyboard events
     window.addEventListener('keydown', this.handleKeyPress)
-    if (typeof window.orientation === 'undefined'){
-      window.location.protocol === "https:"
+    window.location.protocol === "https:"
       ? this.midiMount()
-      : alert('connect via HTTPS to use MIDI features!')
-    }
+      : console.log('connect via HTTPS to use MIDI features!')
   }
   componentWillUnmount() {
     window.removeEventListener('keydown', this.handleKeyPress)
@@ -157,7 +163,15 @@ class App extends Component {
         windowArray = this.state.windowState.map(() => 0)
         windowArray[e.target.value] = 1
       }
-    } else {
+    } else if (window.screen.width < 813 && window.screen.height < 415) {
+      if (windowArray[e.target.value] === 1){
+        windowArray = this.state.windowState.map(() => 0)
+      } else {
+        windowArray = this.state.windowState.map(() => 0)
+        windowArray[e.target.value] = 1
+      }
+    }
+    else {
       if (windowArray[e.target.value] === 0) {
         windowArray[e.target.value] = 1
       } else {
@@ -228,9 +242,14 @@ class App extends Component {
   // midi handlers
   //
   midiMount = () => {
-    // Request MIDI access
-    navigator.requestMIDIAccess()
-      .then(this.onMIDISuccess, this.onMIDIFailure);
+    if (navigator.requestMIDIAccess) {
+      // Request MIDI access
+      navigator.requestMIDIAccess()
+        .then(this.onMIDISuccess, this.onMIDIFailure);  
+    } else {
+      console.log('WebMIDI is not supported in this browser.');
+  }
+
   }
   onMIDIFailure = () => {
     console.log('Could not access your MIDI devices.');

@@ -31,7 +31,7 @@ const About = ({windowState}) => {
             Once all ten slots are filled, saving a preset will overwrite the current selection.
         </p>
         <p>All parameters can be controlled via the Web MIDI API (<a href="https://developer.mozilla.org/en-US/docs/Web/API/MIDIAccess#Browser_compatibility" target="blank">click here for supported browsers</a>)
-            meaning uwu-VS plays well with others! Try using a control surface or by sending MIDI messages from another program (Ableton, Max/MSP, etc.)</p>
+            meaning uwu-VS plays well with others! Try using a control surface or sending MIDI messages from another program (Ableton, Max/MSP, etc.)</p>
         <p>Below you can find a table of accepted keyboard shortcuts and MIDI messages:</p>
         <table>
           <tbody>

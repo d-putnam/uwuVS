@@ -1,6 +1,8 @@
 html, body {
   overscroll-behavior: none;
-  margin:0;
+  margin:0px;
+  height:100vh;
+  overflow:hidden;
 }
 body {
   margin: 0;
@@ -11,11 +13,12 @@ body {
 }
 
 .canvas {
+  overflow-y:hidden;
   position: fixed; 
   top: 0px; 
   left: 0px;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   max-width:100%;
   z-index: -1;
 }
@@ -26,6 +29,8 @@ body {
   margin-top: 2rem;
 }
 .container {
+  width: 100%;
+  height: 100%;
   margin-top: 2rem;
 }
 
@@ -114,3 +119,4 @@ body {
     margin-top: 0rem;
   }
 }
+

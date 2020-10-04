@@ -18,7 +18,7 @@
   border-color: rgba(15, 15, 15, 0.65);
   border-radius: 0rem 0.25rem 0.25rem 0rem;
   border-style: solid solid solid none; 
-  border-width: 2.5px;
+  border-width: 2px;
   opacity:0.7;
   transition: opacity 0.25s ease,
               border-color 0.25s ease,
@@ -34,7 +34,7 @@
 .nav-button.active {
   background-color: rgba(70, 69, 69, 1);
   opacity: 0.95;
-  border-color: rgba(168, 154, 83, 0.8);
+  border-color: rgba(255, 255, 255, 0.45);
 }
 .nav-button:focus {
   outline: none !important;
@@ -43,23 +43,26 @@
 .nav-button:hover {
   opacity: 0.9;
   background-color: rgb(92, 92, 92);
-  border-color: rgba(15, 15, 15, 0.45);
+  border-color: rgba(15, 15, 15, 0.5);
 }
 .nav-button.active:hover {
   opacity: 1;
-  border-color: rgba(168, 154, 83, 0.8);
+  border-color: rgba(255, 255, 255, 0.45);
   background-color: rgb(98, 98, 98);
 }
 
 .shader-icon {
   pointer-events: none;
   width: 150%;
+  height: 80%;
   margin-top: 0.2rem;
   margin-left: -0.3rem
 }
 
 .wave-icon {
   pointer-events: none;
+  width: 70%;
+  height: 80%;
   font-size: x-large;
   margin-top: 0.2rem;
   opacity: 0.8;
@@ -68,6 +71,7 @@
 .fbx-icon {
   pointer-events: none;
   width: 90%;
+  height: 90%;
   margin-top: 0.2rem;
   margin-left: -0.05rem;
   opacity: 0.8;
@@ -76,7 +80,8 @@
 .preset-icon {
   pointer-events: none;
   width: 80%;
-  padding-top: 0.1rem;
+  height: 100%;
+  padding-top: 0.05rem;
   margin-left: 0rem;
   opacity: 0.7
 }
@@ -84,6 +89,7 @@
 .info-icon {
   pointer-events: none;
   width: 80%;
+  height: 80%;
   padding-top: 0.1rem;
   margin-left: 0rem;
   opacity: 0.7
@@ -94,7 +100,7 @@
 @media only screen and (max-width: 415px) {
   .nav {
     padding-right: 0px;
-    position: absolute;
+    position: fixed;
     bottom: 0px;
     top: auto;
     width: 100vw;
@@ -104,9 +110,33 @@
   }
 
   .nav-button {
+    border-radius: 0.25rem 0.25rem 0rem 0rem;
     border-style: solid solid none solid; 
     width: 2.7rem;
     height: 2.8rem;
+    margin-bottom: 0rem;
+  }
+}
+
+/*phones, side orientation*/
+@media only screen and (orientation:landscape) and (max-width: 812px) and (max-height: 414px) {
+  .nav {
+    position: fixed;
+    padding-top: 0rem;
+    left:0;top:0;right:0;bottom:0;
+    height: 70vh;
+    margin-top:auto;
+    margin-bottom:auto;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-align-content: space-between;
+    align-content: space-evenly;
+  }
+  .nav-button {
     margin-bottom: 0rem;
   }
 }
