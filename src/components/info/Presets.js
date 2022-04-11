@@ -38,7 +38,7 @@ const Presets = ({ windowState, presets, activePreset, changeHandler, saveHandle
 
   return (
     <div id="presets" className={getWindowState()}>
-      <div className="center label">PRESETS</div>
+      <header className="center label">PRESETS</header>
       <br />
       <div className="center button-wrap">
         { array.map(button => {

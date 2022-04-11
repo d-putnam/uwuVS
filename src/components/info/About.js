@@ -16,7 +16,7 @@ const About = ({windowState}) => {
   return (
     <div id="about" className={getWindowState()}>
       <div className="text-container">
-        <div style={{fontWeight:'bold'}} className="center label">ABOUT</div>
+        <header style={{fontWeight:'bold'}} className="center label">ABOUT</header>
         <p>uwu-VS is a semi-modular video synthesis instrument for web browsers.</p>  
         <p>Inspired by live coding environments <a href="https://hydra.ojack.xyz/" target="blank">HYDRA</a> by Olivia Jack, and <a href="https://shawnlawson.github.io/The_Force/" target="blank">THE FORCE</a> by Shawn Lawson, I wanted to make a
             browser app flexible enough for live performance but accessible to users without any prior coding experience (though MIDI scripting is encouraged!)</p>

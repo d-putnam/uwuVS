@@ -182,6 +182,7 @@ class Three extends Component {
   };
 
   handleWindowResize = () => {
+    console.log('hey')
     this.setState({width: window.innerWidth, height: window.outerHeight})
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     this.camera.aspect = this.state.width / this.state.height;

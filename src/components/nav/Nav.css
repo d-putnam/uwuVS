@@ -53,46 +53,48 @@
 
 .shader-icon {
   pointer-events: none;
-  width: 150%;
-  height: 80%;
-  margin-top: 0.2rem;
-  margin-left: -0.33rem
+  width: 1.25rem;
+  height: 1.25rem;
+  opacity: 0.7;
+  margin-top: 0.1rem;
+  margin-left: -0.1rem;
 }
 
 .wave-icon {
   pointer-events: none;
-  width: 70%;
-  height: 80%;
-  font-size: x-large;
+  width: 1.25rem;
+  height: 1.25rem;
+  opacity: 0.7;
   margin-top: 0.2rem;
-  opacity: 0.8;
+  margin-left: -0.1rem;
 }
 
 .fbx-icon {
   pointer-events: none;
-  width: 90%;
-  height: 90%;
-  margin-top: 0.2rem;
-  margin-left: -0.05rem;
-  opacity: 0.8;
+  width: 1.25rem;
+  height: 1.25rem;
+  opacity: 0.7;
+  margin-top: 0.1rem;
+  margin-left: -0.1rem;
 }
 
 .preset-icon {
   pointer-events: none;
-  width: 80%;
-  height: 100%;
-  padding-top: 0.05rem;
-  margin-left: 0rem;
-  opacity: 0.7
+  width: 1.25rem;
+  height: 1.25rem;
+  opacity: 0.7;
+  margin-top: 0.23rem;
+  margin-left: -0.1rem;
+
 }
 
 .info-icon {
   pointer-events: none;
-  width: 80%;
-  height: 80%;
-  padding-top: 0.1rem;
-  margin-left: 0rem;
-  opacity: 0.7
+  width: 1.25rem;
+  height: 1.25rem;
+  opacity: 0.7;
+  margin-top: 0.1rem;
+  margin-left: -0.1rem;
 }
 
 

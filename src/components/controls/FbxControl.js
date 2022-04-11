@@ -15,7 +15,7 @@ const WaveControl = ({ windowState, activeShader, sliders, handler }) => {
 
   return (
     <div id="fbx-ctrl" className={getWindowState()}>
-      <div className="center label">FEEDBACK</div>
+      <header className="center label">FEEDBACK</header>
       <br />
       <div className="slider-wrap">
         { sliders[activeShader].filter(slider => slider[0] > 11).map(slider => {

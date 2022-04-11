@@ -10,7 +10,8 @@
     "react": "^16.13.1",
     "react-device-detect": "^1.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "three": "^0.139.2"
   },
   "scripts": {
     "start": "react-scripts start",

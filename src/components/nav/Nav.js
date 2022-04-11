@@ -16,7 +16,7 @@ const Nav = ({ windowState, handler }) => {
   }
 
   return (
-    <div className="nav">
+    <nav className="nav">
       <button value={0} className={getStyle(0)} onClick={handler} title="Shader select [Q]">
         <ShaderLogo className="shader-icon" />
       </button>
@@ -32,7 +32,7 @@ const Nav = ({ windowState, handler }) => {
       <button value={4} className={getStyle(4)} onClick={handler} title="About [T]">
         <InfoLogo className="info-icon" />
       </button>
-    </div>
+    </nav>
   )
 }
 

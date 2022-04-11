@@ -14,7 +14,7 @@ const ShaderControl = ({ windowState, activeShader, handler }) => {
 
   return (
     <div id="shader-ctrl" value={activeShader} className={getWindowState()}>
-      <div className="center label">SHADERS</div>
+      <header className="center label">SHADERS</header>
       <br />
       <div className="center">
         <button className={activeShader === '0' ? 'button active' : 'button inactive'}
