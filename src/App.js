@@ -11,6 +11,16 @@ import {defaultData} from "./defaultData.js";
 import './App.css';
 
 class App extends Component {
+  static checkWebGLSupport() {
+    try {
+      const canvas = document.createElement('canvas');
+      return !!(window.WebGLRenderingContext && (
+        canvas.getContext('webgl') || canvas.getContext('experimental-webgl')
+      ));
+    } catch (e) {
+      return false;
+    }
+  }
 
   constructor(props) {
     super(props);
@@ -29,7 +39,8 @@ class App extends Component {
                           : [1, 1, 1, 0, 0],
           hideAllState: false,
           uniforms: JSON.parse(localStorage.getItem('ursprst'))[0]['uniforms'],
-          presets: JSON.parse(localStorage.getItem('ursprst'))
+          presets: JSON.parse(localStorage.getItem('ursprst')),
+          webglSupported: App.checkWebGLSupport(),
         }
       // Load defaults if no local storage data
       : this.state = {
@@ -289,6 +300,18 @@ class App extends Component {
   }
 
   render() {
+    if (!this.state.webglSupported) {
+      console.log('WebGL not supported! Please enable hardware acceleration in your browser settings or try a different device.');
+      return (
+        <div className={'canvas-fallback'}>
+          <div className={'fallback-content'}>
+            <p>This site requires WebGL</p>
+            <p>Turn on hardware acceleration or try a different browser/device</p>
+            <p>or <a href="https://dputnam.net">go home</a></p>
+          </div>
+        </div>
+      );
+    }
     return (
       <div>
         <Three activeShader={this.state.activeShader} uniforms={this.state.uniforms} />

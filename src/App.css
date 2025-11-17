@@ -1,3 +1,8 @@
+:root {
+  --crt-background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  --crt-size: 100% 2px, 9px 100%;
+}
+
 html, body {
   overscroll-behavior: none;
   margin:0px;
@@ -21,6 +26,29 @@ body {
   height: 100vh;
   max-width:100%;
   z-index: -1;
+}
+.canvas-fallback {
+  background: var(--crt-background);
+  background-size: var(--crt-size);
+  background-color: #525264;
+  overflow:hidden;
+  position: fixed; 
+  top: 0px; 
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  max-width:100%;
+  z-index: 1;
+  box-shadow: 0 0 120px 40px rgba(0,0,0,0.45) inset;
+  z-index:100;
+  pointer-events: auto;
+}
+.fallback-content {
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 30vh;
+  pointer-events: auto !important;
 }
 
 /* full app container */
