@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "833abf7b216f91c1fc2204fc748dde8a",
+    "revision": "47355bd5d0c427892f08362129d731fa",
     "url": "/uwuVS/index.html"
   },
   {
-    "revision": "095e20d34de7d5fd5630",
-    "url": "/uwuVS/static/css/main.7d2d78d9.chunk.css"
+    "revision": "4a267c89da312d42a389",
+    "url": "/uwuVS/static/css/main.45e70d61.chunk.css"
   },
   {
-    "revision": "2bc69367ee9f8a42edae",
-    "url": "/uwuVS/static/js/2.4b0b17bd.chunk.js"
+    "revision": "44808b55591da4dbfa43",
+    "url": "/uwuVS/static/js/2.39231ec2.chunk.js"
   },
   {
-    "revision": "e88a3e95b5364d46e95b35ae8c0dc27d",
-    "url": "/uwuVS/static/js/2.4b0b17bd.chunk.js.LICENSE.txt"
+    "revision": "3d1436923b35dd7566a9f8d9fe68163d",
+    "url": "/uwuVS/static/js/2.39231ec2.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "095e20d34de7d5fd5630",
-    "url": "/uwuVS/static/js/main.ec68a8dd.chunk.js"
+    "revision": "4a267c89da312d42a389",
+    "url": "/uwuVS/static/js/main.fbd9614c.chunk.js"
   },
   {
-    "revision": "f3c62319fcf1d0dd916c",
-    "url": "/uwuVS/static/js/runtime-main.6bc6d4ef.js"
+    "revision": "925a06629138bb6a9acf",
+    "url": "/uwuVS/static/js/runtime-main.c6648030.js"
   },
   {
     "revision": "174dc3939ac4cf48837d5e1817e68d45",
